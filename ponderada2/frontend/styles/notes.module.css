@@ -1,0 +1,67 @@
+/* styles/notes.module.css */
+.notes-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .notes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .note {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .note.completed {
+    background-color: #c0ffc0;
+    text-decoration: line-through;
+  }
+  
+  .note:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
+  
+  .note-input {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .note-input input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .note-input button {
+    padding: 0.5rem 1rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .note-input button:hover {
+    background-color: #0058c0;
+  }
+
+  .teste{
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  /*teste*/
