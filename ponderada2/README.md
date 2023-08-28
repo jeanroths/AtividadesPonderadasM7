@@ -6,9 +6,6 @@
 
 Esta atividade tem por objetivo desenvolver um projeto web que possibilite os usuários registrarem dados em um banco de dados. O deploy do banco, da API do backend e do frontend deve acontecer utilizando uma aplicação com multiplos containers. A aplicação não precisa utilizar frameworks, pode ser realizada utilizando os primitivos presentes na linguagem de programação escolhida.
 
-> ***ESCLARECIMENTO:*** Quem iniciou a atividade com nuvem comercial pode continuar seu desenvolvimento utilizando a solução de nuvem comercial. Contudo, os pontos avaliados não demandam sua utilização. ***NÃO SERÃO PREJUDICADOS QUEM OPTAR POR REALIZAR O DESENVOLVIMENTO APENAS LOCAL.*** Portanto, onde lia-se *utilizando uma nuvem comercial*, considerar apenas ***utilizando uma aplicação com multiplos containers***.
-
-> ***PONTO DE ATENÇÃO:*** Nas atividades anteriores, foi considerado o processo de criação de um ambiente virtual para a criação do arquivo *requiments.txt*, para todos que escolherem utilizar Python como sua linguagem padrão. Nesta atividade, escrever apenas o arquivo *requirements.txt*, sem a criação do ambiente virtual. Para este projeto, espera-se encontrar no ***MÍNIMO*** a aplicação dividida em 2 containers, sendo que o recomendado é a sua divisão em 3 containers.
 
 ### Divisão do projeto em containers:
 
@@ -65,6 +62,52 @@ Os pontos que serão avaliados na entrega do projeto:
 A entrega do projeto deve ser realizada dentro de um repositório público do Github do estudante. Ao entregar a atividade no sistema da instituição, o estudante deve colocar o link para seu repositório.
 O arquivo README do repositório deve conter as informações do estudante, o link para o Dockerhub onde a imagem está hospedada, o que foi desenvolvido (uma breve descrição de até 200 palavras) e o procedimento necessário para executar a aplicação (considerando que o container runtime já está instalado no sistema do usuário).
 
-## Prazo de Entrega:
+## Solução:
 
-As entregas serão consideradas até as 23h59 do dia 27/08/2023. Será considerado o último commit antes do prazo de entrega.
+A atividade ponderada desenvolvida tinha como intuito de funcionar como um "To do list" que permitiria aos usuários criar uma conta no serviço, serem autenticados com um login que devolveria um Token de segurança criar anotações, criar anotações, editá-las e apagá-las com um CRUD.
+
+## Estrutura de pastas (resumida):
+<pre><code>
+ponderada2/
+|-- backend/
+|   |-- app/
+|   |   |-- main.py
+|   |-- Dockerfile
+|
+|-- frontend/
+|   |-- pages/
+|   |   |-- index.js
+|   |-- Dockerfile
+|
+|-- database/
+|-- docker-compose.yml
+|-- README.md
+</code></pre>
+
+## Instruções para execução:
+
+Faça o download das imagens do dockerhub no seu computador:
+
+<pre><code>
+docker pull jeanrothstein/backend:latest
+</code></pre>
+
+<pre><code>
+docker pull jeanrothstein/front:latest
+</code></pre>
+
+execute os arquivos nas portas 3000 para o front e 8000 para o backend ou rode o seguinte comando <pre><code> docker compose -d --build</code></pre> para rodar arquivo yml: 
+
+<pre><code>
+docker run -p 3000:3000 front
+</code></pre>
+
+<pre><code>
+docker run -p 8000:8000 backend
+</code></pre>
+
+## Descrição
+A solução com 3 containers foi escolhida, pois haveria melhor separação das responsabilidades dos serviços e a manutenção dos serviços seria mais fácil, além de poder aplicar camadas adicionais de segurança com o token JWT.  
+
+## Comentário finais
+Consegui apenas fazer a tela de login com o token JWT e backend integrado, não consegui desenvolver a tela final dos cards. As principais ferramentas utilizadas foram Nextjs (front), FastAPI(backend) e PostgreSQL(DB).
