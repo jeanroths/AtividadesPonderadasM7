@@ -4,8 +4,9 @@ version: '3.8'
 
 services:
   webapi:
-    build: 
-      context: ./backend
+    #build: 
+    #  context: ./backend
+    image: backend
     command: bash -c 'uvicorn app.main:app --host 0.0.0.0'
     ports:
       - 8000:8000
@@ -17,15 +18,18 @@ services:
     image: postgres:15-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    expose:
-      - 5432
+    #expose:
+    #  - 5432
+    ports:
+      - 5432:5432
     environment:
       - POSTGRES_USER=jean
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=postgres
   frontend:
-    build:
-      context: ./frontend
+    #build:
+    #  context: ./frontend
+    image: front
     ports:
       - 3000:3000
 

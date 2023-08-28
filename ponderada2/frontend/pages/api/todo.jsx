@@ -1,5 +1,5 @@
 // pages/api/todo.js
-import { database } from '../../../backend/app/db'; // Importe o database do seu código
+//import { database } from '../../../backend/app/db'; // Importe o database do seu código
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
