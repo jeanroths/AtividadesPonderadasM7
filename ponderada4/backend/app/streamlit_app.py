@@ -19,7 +19,7 @@ def main():
     if st.button('Obter Dados do Backend'):
 
         # URL do endpoint GET do seu backend (substitua com a URL real)
-        backend_url = 'http://localhost:8000/model-results'
+        backend_url = 'http://34.206.160.255/model-results'
         
         # Fazer uma chamada GET para o backend
         response = requests.get(backend_url)
