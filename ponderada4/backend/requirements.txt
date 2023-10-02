@@ -12,7 +12,7 @@ pydantic == 1.10.8
 pydantic[email]
 pycaret
 aiosqlite
-pyjwt7
+pyjwt
 python-decouple
 psycopg2
 streamlit
