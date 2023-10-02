@@ -14,5 +14,4 @@ pycaret
 aiosqlite
 pyjwt
 python-decouple
-psycopg2
 streamlit
