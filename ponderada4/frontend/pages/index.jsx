@@ -15,9 +15,9 @@ export default function AuthPage() {
     try {
       let response;
       if (isSignup) {
-        response = await axios.post('http://localhost:8000/users/signup', { email, password });
+        response = await axios.post('http://34.206.160.255/users/signup', { email, password });
       } else {
-        response = await axios.post('http://localhost:8000/users/login', { email, password });
+        response = await axios.post('http://34.206.160.255/users/login', { email, password });
       }
 
       const token = response.data["acess token"]; // Supondo que o token é retornado na resposta

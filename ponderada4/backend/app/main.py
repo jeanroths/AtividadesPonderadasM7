@@ -8,7 +8,6 @@ from fastapi import FastAPI, Body, Depends, UploadFile, HTTPException
 from pycaret.classification import *
 import pandas as pd
 import random
-import subprocess
 
 
 app = FastAPI()
